@@ -1,0 +1,16 @@
+
+.centered-container {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+}
+
+
+h1 {
+  color: blue;
+  text-align: center;
+
+}
