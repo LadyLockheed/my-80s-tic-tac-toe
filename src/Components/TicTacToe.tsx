@@ -24,6 +24,7 @@ const TicTacToe = () => {
 
   const resetGame = ()=> {
     setSquareValues(Array(9).fill(''))
+    setCurrentPlayer('X')
   }
 
   return (
@@ -34,7 +35,11 @@ const TicTacToe = () => {
         <h1 className='ticTacToe-headline'>Tic-Tac-Toe</h1>
       </div>
 
-      <Board squareValues={squareValues} setSquareValues={setSquareValues}/>
+      <Board 
+        squareValues={squareValues} 
+        setSquareValues={setSquareValues}
+        currentPlayer={currentPlayer}
+        setCurrentPlayer={setCurrentPlayer}/>
   
       {statusText()}
 

@@ -2,13 +2,16 @@ import { useState } from 'react'
 import './board.css'
 
 type BoardProps ={
-  squareValues: string[]
-  setSquareValues: React.Dispatch<React.SetStateAction<string[]>>
+  squareValues: string[];
+  setSquareValues: React.Dispatch<React.SetStateAction<string[]>>;
+  currentPlayer: string;
+  setCurrentPlayer: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Board = (props: BoardProps) => {
 
-  const {squareValues, setSquareValues} = props;
+  const {squareValues, setSquareValues, currentPlayer, setCurrentPlayer} = props;
+
 
   const [currentPlayer, setCurrentPlayer] = useState<string>('X')
   const isBoardFilled = !squareValues.includes('')
