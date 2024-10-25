@@ -1,21 +1,23 @@
 import { useState } from 'react'
 import './board.css'
 
-const Board = () => {
+type BoardProps ={
+  squareValues: string[]
+  setSquareValues: React.Dispatch<React.SetStateAction<string[]>>
+}
 
-  const [squareValues, setSquareValues] = useState<string[]>(Array(9).fill(''))
+const Board = (props: BoardProps) => {
+
+  const {squareValues, setSquareValues} = props;
+
   const [currentPlayer, setCurrentPlayer] = useState<string>('X')
   const isBoardFilled = !squareValues.includes('')
-console.log(squareValues)
+
   const handleTurns = (squareIndex: number)=> {
 
-      if(!squareValues.includes('')) {
-        console.log('alla fält är fyllda')
-      }
     setSquareValues(prevValues => [...prevValues.slice(0, squareIndex), currentPlayer, ...prevValues.slice(squareIndex+1)])
     setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X')
     
-
   }
 
   const Square = (index:number) => {

@@ -33,9 +33,17 @@
 
 .reset-button {
   color: red;
-  margin:auto;
-  padding: 1rem 2rem;;
+  font-family: var(--secondary-font);
+  align-self: center;
+  margin: 4rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--dark-pink);
+  border-radius: 10px;
+}
 
+.reset-button:hover {
+  cursor: pointer;
+  background-color: #202020;
 }
 
 @keyframes slideFromRight {

@@ -29,6 +29,10 @@
   0 0 1rem var(--dark-pink);
 }
 
+.square:hover {
+  cursor: pointer;
+}
+
 .square:hover::before {
   content: 'x';
   color: var(--dark-blue);
