@@ -1,0 +1,54 @@
+@import url('../variables.css');
+
+ .centered-container {
+  width: 100vw;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content:space-evenly; */
+
+}
+/* .sliding-text {
+  border: 1px solid orange;
+} */
+
+.ticTacToe-headline {
+  font-family: var(--main-font);
+  font-size: 5rem;
+  color: #7dc2be;
+  text-align: center;
+  animation: slideFromRight 1s ease-in-out forwards; 
+  opacity: 0;
+  margin: 4rem auto 5rem auto;
+
+}
+
+.current-player-text {
+  font-family: var(--secondary-font);
+  font-size:2rem;
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--dark-yellow);
+}
+
+.reset-button {
+  color: red;
+  margin:auto;
+  padding: 1rem 2rem;;
+
+}
+
+@keyframes slideFromRight {
+  0%{
+    transform: translateX(100%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+
+  }
+}
