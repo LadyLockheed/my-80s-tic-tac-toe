@@ -1,6 +1,4 @@
-:root {
-  --pink: #fe2492;
-}
+@import url('../variables.css');
 
 .board {
   display: grid;
@@ -11,54 +9,63 @@
 }
 
 .square {
+  font-family: var(--font);
   padding: .5rem;
   height: 200px;
   width: 200px;
   display: flex;
   justify-content:center;
   align-items: center;
-  border: 2px solid var(--pink);
-  box-shadow: inset 0 0 1rem var(--pink),
-  0 0 1rem var(--pink);
+  border: 2px solid var(--dark-pink);
+  box-shadow: inset 0 0 1rem var(--dark-pink),
+  0 0 1rem var(--dark-pink);
 
+}
+
+.square:hover::before {
+  content: 'x';
+  color: var(--dark-blue);
+  opacity: 50%;
+  font-size: 6rem;
+  font-family: var(--secondary-font)
 }
 
 .board .squares-row:nth-child(1) .square:nth-child(1) {
   border-radius: 10px 0 0 0 ;
-  border-left: 3px solid var(--pink);
-  border-top: 3px solid var(--pink);
+  border-left: 3px solid var(--dark-pink);
+  border-top: 3px solid var(--dark-pink);
   
 }
 
 .board .squares-row:nth-child(1) .square:nth-child(3) {
   border-radius: 0 0 0 10px;
-  border-left: 3px solid var(--pink);
-  border-bottom: 3px solid var(--pink);
+  border-left: 3px solid var(--dark-pink);
+  border-bottom: 3px solid var(--dark-pink);
 }
 
 .board .squares-row:nth-child(3) .square:nth-child(1) {
   border-radius: 0 10px 0 0 ;
-  border-top: 3px solid var(--pink);
-  border-right: 3px solid var(--pink);
+  border-top: 3px solid var(--dark-pink);
+  border-right: 3px solid var(--dark-pink);
 }
 
 .board .squares-row:nth-child(3) .square:nth-child(3) {
   border-radius: 0 0 10px 0 ;
-  border-bottom: 3px solid var(--pink);
-  border-right: 3px solid var(--pink);
+  border-bottom: 3px solid var(--dark-pink);
+  border-right: 3px solid var(--dark-pink);
 }
 
 .board .squares-row:nth-child(1) .square:nth-child(2) {
-  border-left: 3px solid var(--pink);
+  border-left: 3px solid var(--dark-pink);
 }
 .board .squares-row:nth-child(2) .square:nth-child(1) {
-  border-top: 3px solid var(--pink);
+  border-top: 3px solid var(--dark-pink);
 }
 .board .squares-row:nth-child(2) .square:nth-child(3) {
-  border-bottom: 3px solid var(--pink);
+  border-bottom: 3px solid var(--dark-pink);
 }
 .board .squares-row:nth-child(3) .square:nth-child(2) {
-  border-right: 3px solid var(--pink);
+  border-right: 3px solid var(--dark-pink);
 }
 
 
