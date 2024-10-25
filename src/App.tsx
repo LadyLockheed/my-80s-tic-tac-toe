@@ -7,8 +7,10 @@ function App() {
   return (
 
     <div className='centered-container'>
-      <h1>Tic-Tac-Toe</h1>
-  
+      <div className='sliding-text'>
+        <h1 className='ticTacToe-headline'>Tic-Tac-Toe</h1>
+      </div>
+
       <Board/>
   
 
