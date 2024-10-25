@@ -1,26 +1,44 @@
 import './board.css'
 
 const Board = () => {
+  const Square = (index:number) => {
+
+    const isSquareFilled = squareValues[index] !==''
+
+    return (
+      <button 
+      className={squareValues[index] !=='' ? ' square squareFilled' : 'square'}
+      onClick={()=>handleTurns(index)}
+      disabled={isBoardFilled || isSquareFilled}
+      >
+        {squareValues[index]}
+      </button>
+    )
+  }
+
+
+
   return (
     <div className='board'>
 
       <div className="squares-row">
-        <div className='square'></div>
-        <div className='square'></div>
-        <div className='square'></div>
+      {Square(0)}
+      {Square(1)}
+      {Square(2)}
       </div>
 
       <div className="squares-row">
-        <div className='square'>4</div>
-        <div className='square'>5</div>
-        <div className='square'>6</div>
+      {Square(3)}
+      {Square(4)}
+      {Square(5)}
       </div>
 
       <div className="squares-row">
-        <div className='square'>7</div>
-        <div className='square'>8</div>
-        <div className='square'>9</div>
+        {Square(6)}
+        {Square(7)}
+        {Square(8)}
       </div>
+
 
     </div>
   )
