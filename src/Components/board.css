@@ -34,15 +34,25 @@
 }
 
 .square:hover::before {
-  content: 'x';
   color: var(--dark-blue);
   opacity: 50%;
   font-size: 6rem;
   font-family: var(--secondary-font)
 }
+
+.X:hover:before {
+  content: 'X';
+}
+
+.O:hover:before {
+  content: 'O'
+}
+
 .squareFilled {
 pointer-events: none;
 }
+
+
 
 .board .squares-row:nth-child(1) .square:nth-child(1) {
   border-radius: 10px 0 0 0 ;

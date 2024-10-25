@@ -26,7 +26,7 @@ const Board = (props: BoardProps) => {
 
     return (
       <button 
-      className={squareValues[index] !=='' ? ' square squareFilled' : 'square'}
+      className={squareValues[index] !=='' ? 'square squareFilled' : `square ${currentPlayer}`}
       onClick={()=>handleTurns(index)}
       disabled={isBoardFilled || isSquareFilled}
       >
