@@ -31,6 +31,25 @@
   color: var(--dark-yellow);
 }
 
+.current-player-text > span {
+  font-size: 3rem;
+  color: var(--dark-pink)
+}
+
+.winner-text {
+  font-family: var(--secondary-font);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--dark-pink);
+  text-shadow: 0 0 1rem var(--dark-pink);
+}
+.winner-text > span {
+  font-size: 3rem;
+  display: inline-block;
+  animation: growAndShrink 1s ease-in-out forwards 
+}
+
 .reset-button {
   color: red;
   font-family: var(--secondary-font);
