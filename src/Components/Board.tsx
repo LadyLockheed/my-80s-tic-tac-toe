@@ -13,25 +13,30 @@ const Board = (props: BoardProps) => {
   const {squareValues, setSquareValues, currentPlayer, setCurrentPlayer} = props;
 
 
-  const [currentPlayer, setCurrentPlayer] = useState<string>('X')
   const isBoardFilled = !squareValues.includes('')
+
+//TODO Hantera att boarden är fylld men det blev en tie
+
+
 
   const handleTurns = (squareIndex: number)=> {
 
     setSquareValues(prevValues => [...prevValues.slice(0, squareIndex), currentPlayer, ...prevValues.slice(squareIndex+1)])
     setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X')
+
+    
     
   }
 
-  const Square = (index:number) => {
+  const Square = (index:number):ReactNode => {
 
     const isSquareFilled = squareValues[index] !==''
 
     return (
       <button 
-      className={squareValues[index] !=='' ? 'square squareFilled' : `square ${currentPlayer}`}
-      onClick={()=>handleTurns(index)}
-      disabled={isBoardFilled || isSquareFilled}
+        className={squareValues[index] !=='' ? 'square squareFilled' : `square ${currentPlayer}`}
+        onClick={()=>handleTurns(index)}
+        disabled={isBoardFilled || isSquareFilled}
       >
         {squareValues[index]}
       </button>
