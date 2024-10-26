@@ -1,14 +1,45 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Board } from '../Components'
 import './tictactoe.css'
 
 
 const TicTacToe = () => {
   
-  const [winner, setWinner] = useState<string>('')
+  const [winner, setWinner] = useState<string | null>('')
   const [currentPlayer, setCurrentPlayer] = useState<string>('X')
   const [squareValues, setSquareValues] = useState<string[]>(Array(9).fill(''))
-  console.log(squareValues)
+console.log(winner)
+
+
+  
+  useEffect(()=> {
+    const calculateWinner = ()=> {
+
+      const winningLines = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ]
+  
+      for (let i = 0; i < winningLines.length; i++) {
+        const [a, b, c] = winningLines[i];
+        if (squareValues[a] && squareValues[a] === squareValues[b] && squareValues[a] === squareValues[c]) {
+          return setWinner(squareValues[a]);
+        }
+      }
+        
+      return setWinner(null);
+      
+    }
+
+    calculateWinner()
+
+  },[squareValues])
 
   const statusText = ()=> {
     if (winner) 
