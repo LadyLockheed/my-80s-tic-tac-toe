@@ -17,7 +17,7 @@
   font-size: 5rem;
   color: #7dc2be;
   text-align: center;
-  animation: slideFromRight 1s ease-in-out forwards; 
+  animation: slideFromRight 1s ease-in-out forwards, tilt 200ms ease-in 1.8s forwards;
   opacity: 0;
   margin: 4rem auto 5rem auto;
 
@@ -69,13 +69,36 @@
   0%{
     transform: translateX(100%);
   }
-
   50% {
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
+  
 
   }
 }
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg); /* No tilt */
+  }
+  100% {
+    transform: rotate(-8deg); /* Tilted by 5 degrees */
+  }
+}
+
+@keyframes growAndShrink {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.5); /* Grow bigger */
+  }
+  100% {
+    transform: scale(1); /* Back to normal size */
+  }
+}
+
