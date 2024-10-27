@@ -60,7 +60,18 @@ console.log(winner)
 
   return (
 
-    <div className='centered-container'>
+    <div className='tictactoe-content-wrapper'>
+
+<div className="background-shapes">
+
+    <div className="shape circle"></div>
+    <div className="shape square"></div>
+    <div className="shape rectangle"></div>
+    <div className="shape circle"></div>
+    <div className="shape square"></div>
+    <div className="shape rectangle"></div>
+  
+  </div>
 
       <div className='sliding-text'>
         <h1 className='ticTacToe-headline'>Tic-Tac-Toe</h1>

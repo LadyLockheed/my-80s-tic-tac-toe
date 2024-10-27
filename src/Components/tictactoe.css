@@ -1,8 +1,10 @@
 @import url('../variables.css');
 
- .centered-container {
+ .tictactoe-content-wrapper {
   width: 100vw;
   /* height: 100vh; */
+  /* position:relative; */
+
   display: flex;
   flex-direction: column;
   /* justify-content:space-evenly; */
@@ -100,5 +102,101 @@
   100% {
     transform: scale(1); /* Back to normal size */
   }
+}
+.background-shapes {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index: -1; */
+  /* overflow: hidden; */
+  pointer-events: none;
+
+  background-color: transparent;
+}
+
+/* Base style for shapes */
+.shape {
+  position: absolute;
+  background-color: transparent;
+  border: 3px solid;
+  opacity: 0.6;
+}
+
+/* Circle and square styles */
+.shape.circle {
+  border-color: var(--dark-pink); /* Use your 80s neon colors */
+  border-radius: 50%;
+  box-shadow: inset 0 0 1rem var(--dark-pink),
+  0 0 1rem var(--dark-pink);
+}
+
+.shape.square {
+  border-color: var(--dark-turquoise);
+  border-radius: 0;
+  box-shadow: inset 0 0 1rem var(--dark-turquoise),
+  0 0 1rem var(--dark-turquoise);
+}
+
+.shape.rectangle {
+  border-color: var(--dark-yellow);
+  border-radius: 0;
+  box-shadow: inset 0 0 1rem var(--dark-yellow),
+  0 0 1rem var(--dark-yellow);
+}
+
+/* Unique styling for each shape */
+/* circle */
+.shape:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  width: 60px;
+  height: 60px;
+}
+
+/* square */
+.shape:nth-child(2) {
+  top: 50%;
+  left: 80%;
+  width: 40px;
+  height: 40px;
+  transform: rotate(-8deg);
+
+}
+
+/* rectangle */
+.shape:nth-child(3) {
+  top: 50%;
+  left: 10%;
+  width: 100px;
+  height: 30px;
+  transform: rotate(30deg);
+}
+
+/* circle */
+.shape:nth-child(4) {
+  top: 75%;
+  left: 30%;
+  width: 50px;
+  height: 50px;
+}
+
+/* square */
+.shape:nth-child(5) {
+  top: 10%;
+  left: 60%;
+  width: 70px;
+  height: 70px;
+  transform: rotate(8deg);
+}
+
+/* rectangle */
+.shape:nth-child(6) {
+  top: 30%;
+  left: 85%;
+  width: 100px;
+  height: 30px;
+  transform: rotate(-30deg);
 }
 
