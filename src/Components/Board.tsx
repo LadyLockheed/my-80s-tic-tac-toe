@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ReactNode } from 'react';
 import './board.css'
 
 type BoardProps ={
@@ -17,17 +17,14 @@ const Board = (props: BoardProps) => {
 
 //TODO Hantera att boarden är fylld men det blev en tie
 
-
-
   const handleTurns = (squareIndex: number)=> {
 
     setSquareValues(prevValues => [...prevValues.slice(0, squareIndex), currentPlayer, ...prevValues.slice(squareIndex+1)])
     setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X')
 
-    
-    
   }
-
+  
+//TODO Move square to own file?
   const Square = (index:number):ReactNode => {
 
     const isSquareFilled = squareValues[index] !==''
@@ -43,21 +40,19 @@ const Board = (props: BoardProps) => {
     )
   }
 
-
-
   return (
     <div className='board'>
 
       <div className="squares-row">
-      {Square(0)}
-      {Square(1)}
-      {Square(2)}
+        {Square(0)}
+        {Square(1)}
+        {Square(2)}
       </div>
 
       <div className="squares-row">
-      {Square(3)}
-      {Square(4)}
-      {Square(5)}
+        {Square(3)}
+        {Square(4)}
+        {Square(5)}
       </div>
 
       <div className="squares-row">
@@ -65,7 +60,6 @@ const Board = (props: BoardProps) => {
         {Square(7)}
         {Square(8)}
       </div>
-
 
     </div>
   )

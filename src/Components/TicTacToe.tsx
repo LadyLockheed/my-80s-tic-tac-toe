@@ -8,9 +8,6 @@ const TicTacToe = () => {
   const [winner, setWinner] = useState<string | null>('')
   const [currentPlayer, setCurrentPlayer] = useState<string>('X')
   const [squareValues, setSquareValues] = useState<string[]>(Array(9).fill(''))
-console.log(winner)
-
-
   
   useEffect(()=> {
     const calculateWinner = ()=> {
@@ -41,7 +38,7 @@ console.log(winner)
 
   },[squareValues])
 
-
+  //Small components
   const statusText = ()=> {
     if (winner) 
       return (
@@ -54,6 +51,7 @@ console.log(winner)
       }
   }
 
+  //Logic
   const resetGame = ()=> {
     setSquareValues(Array(9).fill(''))
     setCurrentPlayer('X')
@@ -63,7 +61,7 @@ console.log(winner)
 
     <div className='tictactoe-content-wrapper'>
 
-    <Background/>
+      <Background/>
 
       <div className='sliding-text'>
         <h1 className='ticTacToe-headline'>Tic-Tac-Toe</h1>
