@@ -22,6 +22,7 @@
   animation: slideFromRight 1s ease-in-out forwards, tilt 200ms ease-in 1.8s forwards;
   opacity: 0;
   margin: 4rem auto 5rem auto;
+  background-color: transparent;
 @media screen and (max-width:896px) {
 
   .ticTacToe-headline {
