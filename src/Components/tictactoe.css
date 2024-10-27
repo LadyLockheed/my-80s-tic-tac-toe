@@ -22,7 +22,13 @@
   animation: slideFromRight 1s ease-in-out forwards, tilt 200ms ease-in 1.8s forwards;
   opacity: 0;
   margin: 4rem auto 5rem auto;
+@media screen and (max-width:896px) {
 
+  .ticTacToe-headline {
+    font-size:3rem;
+    margin: 2rem auto 5rem auto
+    
+  }
 }
 
 .current-player-text {

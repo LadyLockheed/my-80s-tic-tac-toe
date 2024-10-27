@@ -31,6 +31,14 @@
   0 0 1rem var(--dark-pink);
 }
 
+@media screen and (max-width:896px) {
+
+  .square {
+    height:90px;
+    width:90px;
+  }
+}
+
 .square:hover {
   cursor: pointer;
 }
