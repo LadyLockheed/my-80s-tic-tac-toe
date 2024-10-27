@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Board } from '../Components'
+import { Board, Background } from '../Components'
 import './tictactoe.css'
 
 
@@ -41,6 +41,7 @@ console.log(winner)
 
   },[squareValues])
 
+
   const statusText = ()=> {
     if (winner) 
       return (
@@ -62,16 +63,7 @@ console.log(winner)
 
     <div className='tictactoe-content-wrapper'>
 
-<div className="background-shapes">
-
-    <div className="shape circle"></div>
-    <div className="shape square"></div>
-    <div className="shape rectangle"></div>
-    <div className="shape circle"></div>
-    <div className="shape square"></div>
-    <div className="shape rectangle"></div>
-  
-  </div>
+    <Background/>
 
       <div className='sliding-text'>
         <h1 className='ticTacToe-headline'>Tic-Tac-Toe</h1>
@@ -84,7 +76,7 @@ console.log(winner)
         setCurrentPlayer={setCurrentPlayer}/>
   
       {statusText()}
-
+    
       <button className='reset-button' onClick={()=> resetGame()}>Reset game</button>
 
     </div>
