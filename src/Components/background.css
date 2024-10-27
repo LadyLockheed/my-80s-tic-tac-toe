@@ -4,13 +4,11 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background-color: transparent;
 }
 
 /* Base style for shapes */
 .shape {
   position: absolute;
-  background-color: transparent;
   border: 3px solid;
   opacity: 0.6;
 }
@@ -50,10 +48,9 @@
 .shape:nth-child(2) {
   top: 50%;
   left: 80%;
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   transform: rotate(-8deg);
-
 }
 
 /* rectangle */
@@ -68,17 +65,24 @@
 /* circle */
 .shape:nth-child(4) {
   top: 75%;
-  left: 30%;
+  left: 20%;
   width: 50px;
   height: 50px;
 }
 
+@media screen and (max-width:896px) {
+  .shape:nth-child(4) {
+    top: 55%;
+    left: 20%;
+  }
+}
+
 /* square */
 .shape:nth-child(5) {
-  top: 10%;
+  top: 15%;
   left: 60%;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   transform: rotate(8deg);
 }
 
