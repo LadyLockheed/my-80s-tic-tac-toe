@@ -11,11 +11,8 @@ type BoardProps ={
 const Board = (props: BoardProps) => {
 
   const {squareValues, setSquareValues, currentPlayer, setCurrentPlayer} = props;
-
-
+  
   const isBoardFilled = !squareValues.includes('')
-
-//TODO Hantera att boarden är fylld men det blev en tie
 
   const handleTurns = (squareIndex: number)=> {
 
@@ -23,7 +20,7 @@ const Board = (props: BoardProps) => {
     setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X')
 
   }
-  
+
 //TODO Move square to own file?
   const Square = (index:number):ReactNode => {
 

@@ -1,3 +1,5 @@
+@import url('../variables.css');
+
 .background-shapes {
   top: 0;
   left: 0;
@@ -89,7 +91,7 @@
 /* rectangle */
 .shape:nth-child(6) {
   top: 30%;
-  left: 85%;
+  left: 75%;
   width: 100px;
   height: 30px;
   transform: rotate(-30deg);

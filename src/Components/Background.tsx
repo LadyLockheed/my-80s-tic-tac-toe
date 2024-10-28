@@ -3,6 +3,7 @@ import './background.css'
 const Background = () => {
 
   return (
+    
     <div className="background-shapes">
 
       <div className="shape circle"></div>
