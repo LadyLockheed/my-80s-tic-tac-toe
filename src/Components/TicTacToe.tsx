@@ -6,10 +6,12 @@ import './tictactoe.css'
 const TicTacToe = () => {
   
   const [winner, setWinner] = useState<string | null>('')
+  const [isTie, setIsTie] = useState<boolean>(false)
   const [currentPlayer, setCurrentPlayer] = useState<string>('X')
   const [squareValues, setSquareValues] = useState<string[]>(Array(9).fill(''))
-  
+
   useEffect(()=> {
+
     const calculateWinner = ()=> {
 
       const winningLines = [
@@ -29,7 +31,7 @@ const TicTacToe = () => {
           return setWinner(squareValues[a]);
         }
       }
-        
+
       return setWinner(null);
       
     }
@@ -38,12 +40,27 @@ const TicTacToe = () => {
 
   },[squareValues])
 
+
+  useEffect(()=> {
+    const isBoardFull = !squareValues.includes('')
+
+    if(isBoardFull && !winner) {
+      setIsTie(true)
+    }
+  },[winner, squareValues])
+
   //Small components
   const statusText = ()=> {
     if (winner) 
       return (
         <h1 className='winner-text'>Winner is: <span>{winner}</span></h1>
       )
+      if(isTie) {
+        return (
+          // <h1 className='current-player-text'>It is a tie<span>&#128126;</span></h1>
+          <h1 className='current-player-text'>It is a tie<span>XOXO</span></h1>
+        )
+      }
       if (!winner) {
         return (
           <h1 className='current-player-text'>You´re up player <span>{currentPlayer}</span></h1>
@@ -55,6 +72,7 @@ const TicTacToe = () => {
   const resetGame = ()=> {
     setSquareValues(Array(9).fill(''))
     setCurrentPlayer('X')
+    setIsTie(false)
   }
 
   return (
