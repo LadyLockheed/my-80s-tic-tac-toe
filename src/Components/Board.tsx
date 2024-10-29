@@ -1,17 +1,18 @@
 import { ReactNode } from 'react';
 import './board.css'
+import { type CurrentPlayer } from './TicTacToe';
 
 type BoardProps ={
-  squareValues: string[];
-  setSquareValues: React.Dispatch<React.SetStateAction<string[]>>;
-  currentPlayer: string;
-  setCurrentPlayer: React.Dispatch<React.SetStateAction<string>>;
+  squareValues: (CurrentPlayer | '')[];
+  setSquareValues: React.Dispatch<React.SetStateAction<(CurrentPlayer | '')[]>>;
+  currentPlayer: CurrentPlayer;
+  setCurrentPlayer: React.Dispatch<React.SetStateAction<CurrentPlayer>>;
 }
 
 const Board = (props: BoardProps) => {
 
   const {squareValues, setSquareValues, currentPlayer, setCurrentPlayer} = props;
-  
+
   const isBoardFilled = !squareValues.includes('')
 
   const handleTurns = (squareIndex: number)=> {

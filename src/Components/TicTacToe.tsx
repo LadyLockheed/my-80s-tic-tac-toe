@@ -3,12 +3,15 @@ import { Board, Background } from '../Components'
 import './tictactoe.css'
 
 
+
+export type CurrentPlayer = 'X' | 'O'
+
 const TicTacToe = () => {
   
   const [winner, setWinner] = useState<string | null>('')
   const [isTie, setIsTie] = useState<boolean>(false)
-  const [currentPlayer, setCurrentPlayer] = useState<string>('X')
-  const [squareValues, setSquareValues] = useState<string[]>(Array(9).fill(''))
+  const [currentPlayer, setCurrentPlayer] = useState<CurrentPlayer>('X')
+  const [squareValues, setSquareValues] = useState<(CurrentPlayer | '')[]>(Array(9).fill(''))
 
   useEffect(()=> {
 
@@ -57,7 +60,6 @@ const TicTacToe = () => {
       )
       if(isTie) {
         return (
-          // <h1 className='current-player-text'>It is a tie<span>&#128126;</span></h1>
           <h1 className='current-player-text'>It is a tie<span>XOXO</span></h1>
         )
       }
