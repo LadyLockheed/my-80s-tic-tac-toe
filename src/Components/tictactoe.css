@@ -3,6 +3,27 @@
  .tictactoe-content-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+.tictactoe-game {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media screen and (max-width:1057px) {
+  .tictactoe-game {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.tictactoe-status-reset{
+  display: flex;
+  flex-direction: column;
+  min-width: 22rem;
 }
 
 .ticTacToe-headline {
@@ -11,7 +32,6 @@
   color: #7dc2be;
   text-align: center;
   animation: slideFromRight 1s ease-in-out forwards, tilt 200ms ease-in 1.8s forwards;
-  margin: 4rem auto 5rem auto;
 }
 
 @keyframes slideFromRight {
@@ -37,10 +57,18 @@
   }
 }
 
-@media screen and (max-width:896px) {
+@media screen and (max-width:1057px) {
   .ticTacToe-headline {
     font-size:3rem;
     margin: 2rem auto 5rem auto
+  }
+}
+
+@media screen and (max-height:880px) {
+  .ticTacToe-headline {
+    font-size:3rem;
+    margin: unset;
+    border: 1px solid red;
   }
 }
 
@@ -48,7 +76,6 @@
   font-family: var(--secondary-font);
   font-size: 2rem;
   text-align: center;
-  margin-top: 3rem;
   color: var(--dark-yellow);
   z-index:1;
 }

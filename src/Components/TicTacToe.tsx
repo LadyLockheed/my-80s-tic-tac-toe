@@ -86,16 +86,23 @@ const TicTacToe = () => {
       <div className='sliding-text'>
         <h1 className='ticTacToe-headline'>Tic-Tac-Toe</h1>
       </div>
-
-      <Board 
-        squareValues={squareValues} 
-        setSquareValues={setSquareValues}
-        currentPlayer={currentPlayer}
-        setCurrentPlayer={setCurrentPlayer}/>
+      
+      <div className='tictactoe-game'>
+        <Board 
+          squareValues={squareValues} 
+          setSquareValues={setSquareValues}
+          currentPlayer={currentPlayer}
+          setCurrentPlayer={setCurrentPlayer}
+        />
   
-      {statusText()}
-    
-      <button className='reset-button' onClick={()=> resetGame()}>Reset game</button>
+        <div className='tictactoe-status-reset'>
+
+          {statusText()}
+      
+          <button className='reset-button' onClick={()=> resetGame()}>Reset game</button>
+
+        </div>
+      </div>
 
     </div>
 
