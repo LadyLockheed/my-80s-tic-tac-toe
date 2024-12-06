@@ -1,50 +1,19 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About this project
 
-Currently, two official plugins are available:
+To build a tic-tac-toe gives the opportunity to work with algorithms. I had a lot of help from internet and chatGPT with the logic for the game, I learned A LOT!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+My other focus on this project was working with css, which is an area I have not had the opportunity to work with as much as I wanted in former projects. I built it NOT mobile first, because I did not plan to make it responsive at first. Though I felt this was also an area I needed to work with to remind myself of syntax and such, I implemented some responsiveness later in the project.
 
-## Expanding the ESLint configuration
+## TODO:s and things not included
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Naming: Review all variable and function names. Some could be renamed to make their purpose clearer.
 
-- Configure the top-level `parserOptions` property like this:
+- Style and design: There are a few bugs and other minor issues that need attention. For example, in mobile view, the user shouldn't have to scroll. Additionally, the squares in the corners of the board need a border-radius on only one corner to align with the board's overall border-radius.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Tests: If this were a "real" project (e.g., for a company), tests would be a crucial part of the development process. However, I did not focus on tests at this stage, as my main goal was to practice logic, algorithms, and styling.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Features: The game could include a history feature, allowing users to revert one or more steps in the game. It could also display a list of the most recent winners.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Accessibility: Yes, it lacks correct semantic html and I have not checked if contrast and such is good enough.
