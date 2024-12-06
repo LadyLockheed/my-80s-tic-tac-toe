@@ -1,63 +1,56 @@
 @import url('../variables.css');
 
 .board {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  z-index:2;
-  box-shadow: inset 0 0 1rem var(--dark-pink),
-  0 0 1rem var(--dark-pink);
-  border-radius: 10px;
-  border: 2px solid var(--dark-pink);
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	z-index: 2;
+	box-shadow: inset 0 0 1rem var(--dark-pink), 0 0 1rem var(--dark-pink);
+	border-radius: 10px;
+	border: 2px solid var(--dark-pink);
 }
 
 .square {
-  all:unset;
-  font-family: var(--secondary-font);
-  color: var(--dark-blue);
-  background-color: #101010;
-  font-size: 5rem;
-  padding: .5rem;
-  height: 150px;
-  width: 150px;
-  /* height: 100%;
-  width: 100%; */
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  border: 2px solid var(--dark-pink);
-  box-shadow: inset 0 0 1rem var(--dark-pink),
-  0 0 1rem var(--dark-pink);
+	all: unset;
+	font-family: var(--secondary-font);
+	color: var(--dark-blue);
+	background-color: #101010;
+	font-size: 5rem;
+	padding: 0.5rem;
+	height: 150px;
+	width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid var(--dark-pink);
+	box-shadow: inset 0 0 1rem var(--dark-pink), 0 0 1rem var(--dark-pink);
 }
 
-@media screen and (max-width:1057px) {
-  .square {
-    height:90px;
-    width:90px;
-  }
+@media screen and (max-width: 1057px) {
+	.square {
+		height: 90px;
+		width: 90px;
+	}
 }
 
 .square:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .square:hover::before {
-  color: var(--dark-blue);
-  opacity: 50%;
-  font-size: 4rem;
-  font-family: var(--secondary-font)
+	color: var(--dark-blue);
+	opacity: 50%;
+	font-size: 4rem;
+	font-family: var(--secondary-font);
 }
 
 .X:hover:before {
-  content: 'X';
+	content: 'X';
 }
 
 .O:hover:before {
-  content: 'O'
+	content: 'O';
 }
 
 .squareFilled {
-pointer-events: none;
+	pointer-events: none;
 }
-
-
-
