@@ -1,131 +1,148 @@
 @import url('../variables.css');
 
- .tictactoe-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  align-items: center;
+.tictactoe-content-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	align-items: center;
+	height: 100vh;
+}
+
+@media screen and (max-width: 1057px) {
+	.tictactoe-content-wrapper {
+		gap: 2rem;
+	}
 }
 
 .tictactoe-game {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
+	display: flex;
+	align-items: center;
+	gap: 3rem;
 }
 
-@media screen and (max-width:1057px) {
-  .tictactoe-game {
-    flex-direction: column;
-    gap: 2rem;
-  }
+@media screen and (max-width: 1057px) {
+	.tictactoe-game {
+		flex-direction: column;
+		gap: 2rem;
+	}
 }
 
-.tictactoe-status-reset{
-  display: flex;
-  flex-direction: column;
-  min-width: 22rem;
+.tictactoe-status-reset {
+	display: flex;
+	flex-direction: column;
+	min-width: 22rem;
 }
 
 .ticTacToe-headline {
-  font-family: var(--main-font);
-  font-size: 5rem;
-  color: #7dc2be;
-  text-align: center;
-  animation: slideFromRight 1s ease-in-out forwards, tilt 200ms ease-in 1.8s forwards;
+	font-family: var(--main-font);
+	font-size: 5rem;
+	color: #7dc2be;
+	text-align: center;
+	animation: slideFromRight 1s ease-in-out forwards,
+		tilt 200ms ease-in 1.8s forwards;
 }
 
 @keyframes slideFromRight {
-  0%{
-    transform: translateX(100%);
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-
-  }
+	0% {
+		transform: translateX(100%);
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 @keyframes tilt {
-  0% {
-    transform: rotate(0deg); 
-  }
-  100% {
-    transform: rotate(-8deg); 
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-8deg);
+	}
 }
 
-@media screen and (max-width:1057px) {
-  .ticTacToe-headline {
-    font-size:3rem;
-    margin: 2rem auto 5rem auto
-  }
+@media screen and (max-width: 1057px) {
+	.ticTacToe-headline {
+		font-size: 3rem;
+		margin: 2rem auto 5rem auto;
+	}
 }
 
-@media screen and (max-height:880px) {
-  .ticTacToe-headline {
-    font-size:3rem;
-    margin: unset;
-    border: 1px solid red;
-  }
+@media screen and (max-height: 880px) {
+	.ticTacToe-headline {
+		font-size: 3rem;
+		margin: 0;
+	}
 }
 
 .current-player-text {
-  font-family: var(--secondary-font);
-  font-size: 2rem;
-  text-align: center;
-  color: var(--dark-yellow);
-  z-index:1;
+	font-family: var(--secondary-font);
+	font-size: 2rem;
+	text-align: center;
+	color: var(--dark-yellow);
+	z-index: 1;
 }
 
 .current-player-text > span {
-  display: block;
-  font-size: 3rem;
-  color: var(--dark-pink)
+	display: block;
+	font-size: 3rem;
+	color: var(--dark-pink);
 }
 
 .winner-text {
-  font-family: var(--secondary-font);
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 3rem;
-  color: var(--dark-pink);
-  text-shadow: 0 0 1rem var(--dark-pink);
+	font-family: var(--secondary-font);
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 3rem;
+	color: var(--dark-pink);
+	text-shadow: 0 0 1rem var(--dark-pink);
+}
+
+@media screen and (max-width: 1057px) {
+	.winner-text {
+		margin-top: 0rem;
+	}
 }
 
 .winner-text > span {
-  font-size: 3rem;
-  display: block;
-  animation: growAndShrink 1s ease-in-out forwards;
-  
+	font-size: 3rem;
+	display: block;
+	animation: growAndShrink 1s ease-in-out forwards;
 }
 
 @keyframes growAndShrink {
-  0% {
-    transform: scale(1); 
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1); 
-  }
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 .reset-button {
-  color: red;
-  background-color: #101010;;
-  font-family: var(--secondary-font);
-  align-self: center;
-  margin: 2rem;
-  padding: 1rem 2rem;
-  border: 2px solid var(--dark-pink);
-  border-radius: 10px;
+	color: red;
+	background-color: #101010;
+	font-family: var(--secondary-font);
+	align-self: center;
+	margin: 2rem;
+	padding: 1rem 2rem;
+	border: 2px solid var(--dark-pink);
+	border-radius: 10px;
+}
+
+@media screen and (max-width: 1057px) {
+	.reset-button {
+		margin: 0rem;
+	}
 }
 
 .reset-button:hover {
-  cursor: pointer;
-  background-color: #202020;
+	cursor: pointer;
+	background-color: #202020;
 }
